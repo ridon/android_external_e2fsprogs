@@ -182,6 +182,21 @@ LOCAL_SRC_FILES := $(tune2fs_src_files)
 LOCAL_C_INCLUDES := $(tune2fs_c_includes)
 LOCAL_CFLAGS := $(tune2fs_cflags)
 LOCAL_STATIC_LIBRARIES := $(tune2fs_shared_libraries) $(tune2fs_system_shared_libraries) libext2fs
+LOCAL_MODULE := tune2fs_sbin
+LOCAL_MODULE_STEM := tune2fs
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT_SBIN)
+LOCAL_FORCE_STATIC_EXECUTABLE := true
+
+include $(BUILD_EXECUTABLE)
+
+
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := $(tune2fs_src_files)
+LOCAL_C_INCLUDES := $(tune2fs_c_includes)
+LOCAL_CFLAGS := $(tune2fs_cflags)
+LOCAL_STATIC_LIBRARIES := $(tune2fs_shared_libraries) $(tune2fs_system_shared_libraries) libext2fs
 LOCAL_MODULE := utility_tune2fs
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := UTILITY_EXECUTABLES
